@@ -1,5 +1,4 @@
 class perhitungan:
-    @staticmethod
     def hitung(a, b):
         return (b - a) / a * 100
 
