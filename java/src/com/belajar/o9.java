@@ -12,10 +12,8 @@ Jalan kan perintah di terminal
 
 package com.belajar;
 
-public class o8 {
+public class o9 {
     public static void main(String[] args) {
-        for (int i = 0; i < args.length; i++) {
-            System.out.printf("args ke %d adalah %s\n", i, args[i]);
-        }
+        System.out.printf("nilai max int %d\n", Integer.MAX_VALUE);
     }
 }
