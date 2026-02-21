@@ -1,5 +1,10 @@
 //  Belajar Java [Dasar] - 06 - Pengenalan Print Dan AlurEksekusi
 
+/* READ ME
+
+
+*/
+
 package com.belajar;
 
 public class o6 {
