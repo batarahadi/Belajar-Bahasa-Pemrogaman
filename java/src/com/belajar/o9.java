@@ -1,4 +1,4 @@
-/*   elajar Java [Dasar] - 08 - 
+/*   elajar Java [Dasar] - 09 - Tipe data fundamental atau Primitive
 
 
 READ ME
@@ -14,6 +14,15 @@ package com.belajar;
 
 public class o9 {
     public static void main(String[] args) {
+        /*
+        tipe data di java:
+        integer, byte, short, long, double, float, char, boolean
+        */
+
+        // integer (satuan)
+        int i = 10;
+        System.out.println("=====INTEGER======");
+        System.out.printf("nilai int %d\n", i);
         System.out.printf("nilai max int %d\n", Integer.MAX_VALUE);
         System.out.printf("nilai min int %d\n", Integer.MIN_VALUE);
     }
