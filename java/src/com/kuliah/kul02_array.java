@@ -1,6 +1,6 @@
 package com.kuliah;
 
-public class kuliah02 {
+public class kul02_array {
     public static void main(String[] args) {
         //deklarasi array dengan 5 elemen (0-4)
         int[] angka = {1, 2, 3, 4, 5};

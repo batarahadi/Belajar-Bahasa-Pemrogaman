@@ -16,7 +16,7 @@ class dataMahasiswa {
     }
 }
 
-public class kuliah01 {
+public class kul01 {
     public static void main(String[] args) {
         dataMahasiswa mhs1 = new dataMahasiswa("Adi", 19);
         dataMahasiswa mhs2 = new dataMahasiswa("Budi",20);
