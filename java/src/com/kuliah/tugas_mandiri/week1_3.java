@@ -1,5 +1,4 @@
 package com.kuliah.tugas_mandiri;
-
 import java.util.Scanner;
 
 class mahasiswa {
@@ -11,32 +10,34 @@ class mahasiswa {
         this.nama = nama;
         this.nim = nim;
         this.jurusan = jurusan;
-        this.ipk = ipk;
-    }
+        this.ipk = ipk;}
 
     public double getIpk() {
-        return ipk;
-    }
+        return ipk;}
 
     public void setIpk(double ipk) {
-        this.ipk = ipk;
-    }
+        this.ipk = ipk;}
 
     public String cekLulus() {
         if (ipk >= 3.00) {
             return "Lulus";
         } else {
             return "Tidak Lulus";
-        }
-    }
+}}
     
-    // menampilkan informasi mahasiswa
-    void tampilkanInfo() {
-        System.out.printf("Nama: %s\nNIM: %s\nJurusan: %s\nIPK: %.2f\nStatus: %s\n\n", nama, nim, jurusan, ipk, cekLulus());
-    }
-}
+    // Tambahan baru
+    public String hitungPredikat() {
+        if (ipk >= 3.75) return "Dengan Pujian";
+        else if (ipk >= 3.50) return "Sangat Memuaskan";
+        else if (ipk >= 3.00) return "Memuaskan";
+        else return "Perlu Perbaikan";}
 
-public class week1_2 {
+    void tampilkanInfo() {
+        System.out.printf("Nama: %s\nNIM: %s\nJurusan: %s\nIPK: %.2f\nStatus: %s\nPredikat: %s\n\n",
+                nama, nim, jurusan, ipk, cekLulus(), hitungPredikat()); // update di sini
+    }}
+
+public class week1_3 {
     public static void main(String[] args) {
         mahasiswa[] daftarMahasiswas = new mahasiswa[5];
         daftarMahasiswas[0] = new mahasiswa("Andi Pratama", "2440001", "Teknik Informatika", 3.75);
@@ -65,12 +66,10 @@ public class week1_2 {
                 System.out.println("=== Data Mahasiswa ===");
                 mhs.tampilkanInfo();
                 ketemu = true;
-                break;
-            }
-        }
+                break;}}
+
         if (!ketemu) {
-            System.out.println("Mahasiswa dengan NIM " + nimUtkUpdate + " tidak ditemukan.");
-        }
+            System.out.println("Mahasiswa dengan NIM " + nimUtkUpdate + " tidak ditemukan.");}
         dataInputScanner.close();
     }
 }
