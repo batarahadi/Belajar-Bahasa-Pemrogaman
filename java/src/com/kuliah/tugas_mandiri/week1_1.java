@@ -15,8 +15,7 @@ class mahasiswa {
     // menampilkan informasi mahasiswa
     void tampilkanInfo() {
         System.out.printf("Nama: %s\nNIM: %s\nJurusan: %s\nIPK: %.2f\n\n", nama, nim, jurusan, ipk);
-    }
-}
+    }}
 
 public class week1_1 {
     public static void main(String[] args) {
