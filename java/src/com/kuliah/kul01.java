@@ -24,3 +24,4 @@ public class kul01 {
         mhs2.tampilkanInfo();
     }
 }
+

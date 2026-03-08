@@ -1,11 +1,30 @@
 package myid.bataralab;
 
+class makanan {
+    void info() {
+        System.out.println("Makanan adalah sumber energi bagi tubuh.");
+    }
+}
+
+class nasi extends makanan {
+    @Override
+    void info() {
+        System.out.println("Nasi adalah makanan pokok di Indonesia.");
+    }
+}
+
+class roti extends makanan {
+    @Override
+    void info() {
+        System.out.println("Roti adalah makanan yang terbuat dari tepung.");
+    }
+}
+
 public class coba {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
-        System.out.println("Welcome to Bataralab!");
-        System.out.println("salam kenal, saya mainan dari bataralab");
-        System.out.println("saya sedang belajar bahasa pemrograman java");
-        System.out.println("semoga saya bisa menjadi programmer yang handal");
+        makanan batu = new nasi();
+        makanan sariRoti = new roti();
+        batu.info();
+        sariRoti.info();
     }
 }
