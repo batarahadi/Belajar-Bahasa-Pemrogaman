@@ -20,16 +20,15 @@ class mahasiswa {
 
 public class week1_1 {
     public static void main(String[] args) {
-        mahasiswa mhs1 = new mahasiswa("Andi Pratama", "2440001", "Teknik Informatika", 3.75);
-        mahasiswa mhs2 = new mahasiswa("Budi Santoso", "2440002", "Sistem Informasi", 3.40);
-        mahasiswa mhs3 = new mahasiswa("Citra Lestari", "2440003", "Teknik Informatika", 3.90);
-        mahasiswa mhs4 = new mahasiswa("Joni Suharto", "2440004", "Teknik Industri", 3.00);
-        mahasiswa mhs5 = new mahasiswa("Bulan Suci", "2440005", "Akuntansi", 3.20);
+        mahasiswa[] daftarMahasiswas = new mahasiswa[5];
+        daftarMahasiswas[0] = new mahasiswa("Andi Pratama", "2440001", "Teknik Informatika", 3.75);
+        daftarMahasiswas[1] = new mahasiswa("Budi Santoso", "2440002", "Sistem Informasi", 3.40);
+        daftarMahasiswas[2] = new mahasiswa("Citra Lestari", "2440003", "Teknik Informatika", 3.90);
+        daftarMahasiswas[3] = new mahasiswa("Joni Suharto", "2440004", "Teknik Industri", 3.00);
+        daftarMahasiswas[4] = new mahasiswa("Bulan Suci", "2440005", "Akuntansi", 3.20);
 
-        mhs1.tampilkanInfo();
-        mhs2.tampilkanInfo();
-        mhs3.tampilkanInfo();
-        mhs4.tampilkanInfo();
-        mhs5.tampilkanInfo();
+        for (mahasiswa mhs : daftarMahasiswas) {
+            mhs.tampilkanInfo();
+        }
     }
 }
