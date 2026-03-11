@@ -76,6 +76,14 @@ public class o15 {
         c = a ^ b; // true ^ true = false
         System.out.printf("%b ^ %b = %b\n", a, b, c);
 
-
+        // Negasi / NOT (!)
+        System.out.println("===== Negasi / NOT (!) =====");
+        a = false;
+        c = !a; // !false = true
+        System.out.printf("!%b = %b\n", a, c);
+        a = true;
+        c = !a; // !true = false
+        System.out.printf("!%b = %b\n", a, c);
+        
     }
 }
