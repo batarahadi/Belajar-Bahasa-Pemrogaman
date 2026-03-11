@@ -1,5 +1,16 @@
 package com.belajar;
 
+/*   Belajar Java [Dasar] - 15 - Operator Logika
+
+
+READ ME
+
+Jalan kan perintah di terminal
+1. javac ../src/com/belajar/o8.java -d ../bin
+2. java com.belajar.o8
+
+*/
+
 public class o15 {
     public static void main(String[] args) {
         
@@ -65,6 +76,6 @@ public class o15 {
         c = a ^ b; // true ^ true = false
         System.out.printf("%b ^ %b = %b\n", a, b, c);
 
-        
+
     }
 }

@@ -1,4 +1,4 @@
-/*   elajar Java [Dasar] - 09 - Tipe data fundamental atau Primitive
+/*   belajar Java [Dasar] - 09 - Tipe data fundamental atau Primitive
 
 
 READ ME
