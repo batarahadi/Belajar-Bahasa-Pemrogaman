@@ -23,6 +23,7 @@ class Lagu {
     public String getArtis() { return artis; }
     public double getDurasi() { return durasi; }
 
+    // Method untuk menampilkan informasi lagu
     public void tampilkanInfo() {
         System.out.println("Judul       : " + judul);
         System.out.println("Artis       : " + artis);
@@ -30,7 +31,7 @@ class Lagu {
     }
 }
 
-// Class User
+// Class User sebagai parent class untuk Admin dan Member
 abstract class User { // Abstract class untuk User, Mencegah Pembuatan Objek "User" yang Tidak Jelas Perannya
     protected String nama;
 
@@ -44,7 +45,6 @@ abstract class User { // Abstract class untuk User, Mencegah Pembuatan Objek "Us
 
 // Class Admin
 class Admin extends User {
-
     Admin(String nama) {
         super(nama);
     }
@@ -54,6 +54,7 @@ class Admin extends User {
         System.out.println("Akses " + nama + " (Admin): Dapat menambahkan lagu baru ke playlist.");
     }
 
+    // fitur khusu Admin untuk menambahkan lagu ke playlist
     public int tambahLagu(Lagu[] listLagu, int jumlahLagu, Lagu laguBaru) {
         if (jumlahLagu < listLagu.length) {
             listLagu[jumlahLagu] = laguBaru;
@@ -78,6 +79,7 @@ class Member extends User {
         System.out.println("Akses " + nama + " (Member): Dapat melihat daftar lagu dalam playlist.");
     }
 
+    // fitur khusus Member untuk melihat daftar lagu dalam playlist
     public void lihatDaftarLagu(Lagu[] listLagu, int jumlahLagu) {
         System.out.println("Daftar Lagu dalam Playlist:");
         for (int i = 0; i < jumlahLagu; i++) {
@@ -88,7 +90,7 @@ class Member extends User {
         }
     }
 
-    // pakai listLagu.length saja untuk iterasi
+    // fitur khusus Member untuk mencari lagu berdasarkan judul
     public void cariLagu(Lagu[] listLagu, String judul) {
         boolean ditemukan = false;
         for (Lagu lagu : listLagu) {
@@ -104,7 +106,7 @@ class Member extends User {
     }
 } 
 
-// Main class untuk menjalankan program
+// Main class untuk menjalankan program utama
 public class PlaylistOOP {
     public static void main(String[] args) {
         Lagu[] listLagu = new Lagu[100]; // Array untuk menyimpan lagu, kapasitas maksimal 100 lagu
@@ -125,8 +127,10 @@ public class PlaylistOOP {
         jumlahLagu = admin.tambahLagu(listLagu, jumlahLagu, new Lagu("Someone Like You", "Adele", 4.45));
         System.out.println();
 
+        // Member melihat daftar lagu dalam playlist
         member.lihatDaftarLagu(listLagu, jumlahLagu);
 
+        // Member mencari lagu berdasarkan judul
         member.cariLagu(listLagu, "The One That Got Away");
     }
 }
