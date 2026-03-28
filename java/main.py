@@ -1,12 +1,9 @@
-class menghitung:
-    def __init__(self):
-        self.nilai1 = 0
-        self.nilai2 = 0
+# x = 10
+def aja(a):
+    x = 5
+    print(x) 
+    return a + x
 
-    def penjumlahan(self):
-        return self.nilai1 + self.nilai2
-
-a = menghitung()
-a.nilai1 = 5
-a.nilai2 = 2
-print(a.penjumlahan())
+x = 10
+print(x)
+print(aja(x))

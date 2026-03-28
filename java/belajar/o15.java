@@ -1,4 +1,4 @@
-package com.belajar;
+package belajar;
 
 /*   Belajar Java [Dasar] - 15 - Operator Logika
 

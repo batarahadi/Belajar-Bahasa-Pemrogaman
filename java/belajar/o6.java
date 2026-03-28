@@ -5,7 +5,7 @@
 
 */
 
-package com.belajar;
+package belajar;
 
 public class o6 {
     public static void main(String[] args) {
