@@ -1,3 +1,5 @@
+package kuliah;
+
 public class arraymultidimensi {
     public static void main(String[] args) {
         String[][] address = {
