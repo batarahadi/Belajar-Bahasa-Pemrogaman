@@ -8,6 +8,7 @@
 
 
 // Class Lagu
+package kuliah.tugas_kelompok.t1;
 class Lagu {
     private String judul;
     private String artis;

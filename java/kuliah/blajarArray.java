@@ -4,7 +4,7 @@ public class blajarArray {
     public static void main(String[] args) {
         // nilai array
         int[] dataArray = {32, 65, 32, 12, 65, 12, 1, 99, 4, 57};
-        int mencariAngka = 4;
+        int mencariAngka = 2;
         boolean ditemukan = false;
 
         // 1. Linear search
@@ -21,7 +21,7 @@ public class blajarArray {
 
         // 2. Binary search
         java.util.Arrays.sort(dataArray); // Pastikan array sudah diurutkan terlebih dahulu
-
+        System.out.println("Array setelah diurutkan: " + java.util.Arrays.toString(dataArray));
 
         int index = java.util.Arrays.binarySearch(dataArray, mencariAngka);
         if (index >= 0) {
@@ -29,5 +29,6 @@ public class blajarArray {
         } else {
             System.out.printf("Element %d tidak ditemukan %n", mencariAngka);
         }
+        System.out.println(index);
     }
 }
