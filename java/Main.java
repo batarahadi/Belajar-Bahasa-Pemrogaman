@@ -1,36 +1,36 @@
-// Kelas Node untuk merepresentasikan setiap elemen
-class Node {
+// Kelas iniNode untuk merepresentasikan setiap elemen
+class iniNode {
     int data;     // Menyimpan data
-    Node next;    // Menunjuk ke node berikutnya
+    iniNode next;    // Menunjuk ke node berikutnya
 
     // Konstruktor untuk membuat node baru
-    public Node(int data) {
-        this.data = data;
+    public iniNode(int a) {
+        this.data = a;
         this.next = null;
     }
 }
 
 // Kelas utama Singly Linked List
 class SinglyLinkedList {
-    Node head;
+    iniNode head;
 
     // 1. Menyisipkan elemen di awal (Insert at Head)
     // Kompleksitas Waktu: O(1)
     public void insertAtHead(int data) {
-        Node newNode = new Node(data); // Membuat node baru
-        newNode.next = head;           // Node baru menunjuk ke node pertama saat ini
+        iniNode newNode = new iniNode(data); // Membuat node baru
+        newNode.next = head;           // iniNode baru menunjuk ke node pertama saat ini
         head = newNode;                // Memperbarui head agar menunjuk ke node baru
     }
 
     // 2. Menyisipkan elemen di akhir (Insert at Tail)
     // Kompleksitas Waktu: O(n)
     public void insertAtTail(int data) {
-        Node newNode = new Node(data);
+        iniNode newNode = new iniNode(data);
         
         if (head == null) {
             head = newNode; // Jika daftar kosong, node baru langsung menjadi head
         } else {
-            Node current = head;
+            iniNode current = head;
             // Menelusuri node satu per satu hingga menemukan node terakhir
             while (current.next != null) { 
                 current = current.next;
@@ -51,7 +51,7 @@ class SinglyLinkedList {
 
     // 4. Menampilkan isi linked list (Traversal)
     public void display() {
-        Node current = head;
+        iniNode current = head;
         while (current != null) {
             System.out.print(current.data + " -> ");
             current = current.next;
