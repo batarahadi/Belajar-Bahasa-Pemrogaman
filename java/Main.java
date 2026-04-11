@@ -1,11 +1,11 @@
 // Kelas iniNode untuk merepresentasikan setiap elemen
 class iniNode {
-    int data;     // Menyimpan data
+    int simpanData;     // Menyimpan data
     iniNode next;    // Menunjuk ke node berikutnya
 
     // Konstruktor untuk membuat node baru
     public iniNode(int a) {
-        this.data = a;
+        this.simpanData = a;
         this.next = null;
     }
 }

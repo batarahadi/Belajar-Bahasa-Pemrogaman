@@ -10,9 +10,9 @@ class iniNode {
 
 public class utama {
     // Fungsi otomatis buat nambahin data di paling belakang
-    public static void tambahDiUjung(iniNode kepala, int angkaBaru) {
+    public static void tambahDiUjung(iniNode dataBeruntun, int angkaBaru) {
         iniNode kotakBaru = new iniNode(angkaBaru);
-        iniNode kurir = kepala; // Kurir mulai dari awal [cite: 279]
+        iniNode kurir = dataBeruntun; // Kurir mulai dari awal [cite: 279]
 
         // --- ALUR JALANNYA KURIR ---
         // Selama kotak di belakangnya MASIH ADA, kurir harus maju terus 
