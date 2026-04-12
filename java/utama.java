@@ -9,35 +9,35 @@ class iniNode {
 }
 
 public class utama {
-    // Fungsi otomatis buat nambahin data di paling belakang
-    public static void tambahDiUjung(iniNode dataBeruntun, int angkaBaru) {
-        iniNode kotakBaru = new iniNode(angkaBaru);
-        iniNode kurir = dataBeruntun; // Kurir mulai dari awal [cite: 279]
+    // Baris 13: 'wadahData' adalah label kiriman, 'inputAngka' adalah nilai baru
+    public static void tambahDiUjung(iniNode wadahData, int inputAngka) {
+        iniNode ciptaNode = new iniNode(inputAngka); // [cite: 276]
+        iniNode petugasCari = wadahData; // Petugas mulai dari alamat yang dikirim 
 
-        // --- ALUR JALANNYA KURIR ---
-        // Selama kotak di belakangnya MASIH ADA, kurir harus maju terus 
-        while (kurir.nextAja != null) {
-            kurir = kurir.nextAja; // Langkah maju [cite: 282]
+        // --- ALUR KERJA PETUGAS (TRAVERSAL) ---
+        // Petugas ngecek tangan 'nextAja' satu-satu sampai ketemu yang kosong [cite: 281]
+        while (petugasCari.nextAja != null) {
+            petugasCari = petugasCari.nextAja; // Langkah maju [cite: 282]
         }
 
-        // Kalau sudah sampai di kotak yang belakangnya KOSONG, baru sambungin! [cite: 286]
-        kurir.nextAja = kotakBaru;
+        // Tangan si petugas yang di ujung sekarang megang node baru 
+        petugasCari.nextAja = ciptaNode;
     }
 
     public static void main(String[] args) {
-        iniNode kepala = new iniNode(10); // Data 1
+        // 'titikAwal' adalah jangkar utama di memori
+        iniNode titikAwal = new iniNode(10); 
 
-        // Kita tambah datanya satu per satu
-        tambahDiUjung(kepala, 20); // Data 2
-        tambahDiUjung(kepala, 30); // Data 3
-        tambahDiUjung(kepala, 40); // Data 4
+        // Kita oper 'titikAwal' ke fungsi. Di sana, dia bakal dijulukin 'wadahData'
+        tambahDiUjung(titikAwal, 20); 
+        tambahDiUjung(titikAwal, 30);
 
-        // Tampilkan hasilnya
-        iniNode penampil = kepala;
-        System.out.print("Urutan Rantai: ");
-        while (penampil != null) {
-            System.out.print(penampil.isiData + " -> ");
-            penampil = penampil.nextAja;
+        // 'tukangCek' buat nampilin hasil tanpa ngerusak 'titikAwal'
+        iniNode tukangCek = titikAwal;
+        System.out.print("Rantai: ");
+        while (tukangCek != null) {
+            System.out.print(tukangCek.isiData + " -> ");
+            tukangCek = tukangCek.nextAja;
         }
         System.out.println("null");
     }
