@@ -5,7 +5,7 @@
 2902703293 - JOSUA EMANUELLE ARSETO
 2602211871 - MATIAS NDAWA ATA BARA
 */
-package kuliah.tugas_kelompok.t2;
+package kuliah.tugas_kelompok.lec.t2;
 import java.util.Scanner;
 
 // Menggunakan kembali class Lagu dengan atribut judul, artis, dan durasi
