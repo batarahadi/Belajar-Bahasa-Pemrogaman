@@ -31,51 +31,7 @@ class Lagu {
 }
 
 public class PlaylistArray {
-    public static void main(String[] args) {
-        // Deklarasi array statis dengan kapasitas maksimum 10 lagu
-        Lagu[] playlist = new Lagu[10];
-        Scanner consoleInput = new Scanner(System.in);
-        boolean isLanjutkan = true;
-
-        while (isLanjutkan) {
-            // Menu interaktif sesuai expected output dengan opsi tambahan untuk sorting
-            System.out.println("\n=== MENU PLAYLIST MUSIK ===");
-            System.out.println("1. Tampilkan semua lagu");
-            System.out.println("2. Tambah lagu baru");
-            System.out.println("3. Hapus lagu berdasarkan judul");
-            System.out.println("4. Cari lagu berdasarkan judul");
-            System.out.println("5. Urutkan berdasarkan durasi");
-            System.out.println("6. Keluar");
-            System.out.print("Pilih menu: ");
-            String userInput = consoleInput.nextLine();
-
-            switch (userInput) {
-                case "1":
-                    tampilkanSemuaLagu(playlist);
-                    break;
-                case "2":
-                    tambahLagu(playlist, consoleInput);
-                    break;
-                case "3":
-                    hapusLagu(playlist, consoleInput);
-                    break;
-                case "4":
-                    cariLagu(playlist, consoleInput);
-                    break;
-                case "5":
-                    urutkanLaguBerdasarkanDurasi(playlist);
-                    break;
-                case "6":
-                    isLanjutkan = false;
-                    System.out.println("Terima kasih telah menggunakan program Playlist Musik!");
-                    break;
-                default:
-                    System.err.println("Pilihan tidak valid. Silakan pilih menu 1-6.");
-            }
-        }
-        consoleInput.close();
-    }
-
+    
     // 1. TRAVERSAL: Menampilkan daftar lagu
     private static void tampilkanSemuaLagu(Lagu[] playlist) {
         System.out.println("\nDaftar lagu saat ini:");
@@ -202,4 +158,49 @@ public class PlaylistArray {
         System.out.println("\n=== Sesudah Pengurutan (Ascending) ===");
         tampilkanSemuaLagu(playlist); // Menampilkan hasil sesudah pengurutan 
     }
+    public static void main(String[] args) {
+        // Deklarasi array statis dengan kapasitas maksimum 10 lagu
+        Lagu[] playlist = new Lagu[10];
+        Scanner consoleInput = new Scanner(System.in);
+        boolean isLanjutkan = true;
+
+        while (isLanjutkan) {
+            // Menu interaktif sesuai expected output dengan opsi tambahan untuk sorting
+            System.out.println("\n=== MENU PLAYLIST MUSIK ===");
+            System.out.println("1. Tampilkan semua lagu");
+            System.out.println("2. Tambah lagu baru");
+            System.out.println("3. Hapus lagu berdasarkan judul");
+            System.out.println("4. Cari lagu berdasarkan judul");
+            System.out.println("5. Urutkan berdasarkan durasi");
+            System.out.println("6. Keluar");
+            System.out.print("Pilih menu: ");
+            String userInput = consoleInput.nextLine();
+
+            switch (userInput) {
+                case "1":
+                    tampilkanSemuaLagu(playlist);
+                    break;
+                case "2":
+                    tambahLagu(playlist, consoleInput);
+                    break;
+                case "3":
+                    hapusLagu(playlist, consoleInput);
+                    break;
+                case "4":
+                    cariLagu(playlist, consoleInput);
+                    break;
+                case "5":
+                    urutkanLaguBerdasarkanDurasi(playlist);
+                    break;
+                case "6":
+                    isLanjutkan = false;
+                    System.out.println("Terima kasih telah menggunakan program Playlist Musik!");
+                    break;
+                default:
+                    System.err.println("Pilihan tidak valid. Silakan pilih menu 1-6.");
+            }
+        }
+        consoleInput.close();
+    }
+
 }
