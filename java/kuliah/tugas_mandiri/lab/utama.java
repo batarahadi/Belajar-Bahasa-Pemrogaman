@@ -1,5 +1,9 @@
 package kuliah.tugas_mandiri.lab;
 
-public class utama {
+class utama {
+
     
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
 }

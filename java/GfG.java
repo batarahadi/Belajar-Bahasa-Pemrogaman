@@ -8,7 +8,7 @@ class pita {
     }
 }
 
-class GfG {
+public class GfG {
     // Delete the dataMasuk node and return the new dataMasuk
     static pita deleteHead(pita dataMasuk) {
 
@@ -18,13 +18,13 @@ class GfG {
 
         // Store the current dataMasuk in dataMasuk
         // temporary variable
-        pita temp = dataMasuk;
+        pita tempat = dataMasuk;
 
         // Move the dataMasuk pointer to the next node
         dataMasuk = dataMasuk.next;
 
         // Free the memory of the old dataMasuk node
-        temp = null;
+        tempat = null;
 
         return dataMasuk;
     }
