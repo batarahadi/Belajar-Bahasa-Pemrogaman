@@ -1,82 +1,56 @@
-// Kelas iniNode untuk merepresentasikan setiap elemen
-class iniNode {
-    int simpanData;     // Menyimpan data
-    iniNode next;    // Menunjuk ke node berikutnya
+class Node {
+    int data;
+    Node next;
 
-    // Konstruktor untuk membuat node baru
-    public iniNode(int a) {
-        this.simpanData = a;
+    Node(int x) {
+        this.data = x;
         this.next = null;
     }
 }
 
-// Kelas utama Singly Linked List
-class SinglyLinkedList {
-    iniNode head;
+class GfG {
 
-    // 1. Menyisipkan elemen di awal (Insert at Head)
-    // Kompleksitas Waktu: O(1)
-    public void insertAtHead(int data) {
-        iniNode newNode = new iniNode(data); // Membuat node baru
-        newNode.next = head;           // iniNode baru menunjuk ke node pertama saat ini
-        head = newNode;                // Memperbarui head agar menunjuk ke node baru
+    // Delete the head node and return the new head
+    static Node deleteHead(head) {
+
+        // Check if the list is empty
+        if (head == null)
+            return null;
+
+        // Store the current head in a
+        // temporary variable
+        Node temp = head;
+
+        // Move the head pointer to the next node
+        head = head.next;
+
+        // Free the memory of the old head node (not needed in JS, GC handles it)
+        temp = null;
+
+        return head;
     }
 
-    // 2. Menyisipkan elemen di akhir (Insert at Tail)
-    // Kompleksitas Waktu: O(n)
-    public void insertAtTail(int data) {
-        iniNode newNode = new iniNode(data);
-        
-        if (head == null) {
-            head = newNode; // Jika daftar kosong, node baru langsung menjadi head
-        } else {
-            iniNode current = head;
-            // Menelusuri node satu per satu hingga menemukan node terakhir
-            while (current.next != null) { 
-                current = current.next;
+    // Function to print the linked list
+    static void printList(Node curr) {
+        while (curr != null) {
+            System.out.print(curr.data);
+            if (curr.next != null) {
+                System.out.print(" -> ");
             }
-            current.next = newNode; // Menghubungkan node terakhir dengan node baru
+            curr = curr.next;
         }
     }
-
-    // 3. Menghapus elemen di awal (Remove from Head)
-    // Kompleksitas Waktu: O(1)
-    public void removeHead() {
-        if (head != null) {
-            head = head.next; // Menggeser head ke node berikutnya
-        } else {
-            System.out.println("Linked List sudah kosong.");
-        }
-    }
-
-    // 4. Menampilkan isi linked list (Traversal)
-    public void display() {
-        iniNode current = head;
-        while (current != null) {
-            System.out.print(current.data + " -> ");
-            current = current.next;
-        }
-        System.out.println("null");
-    }
-}
-
-// Kelas Main untuk menguji (Test) kode
-public class Main {
     public static void main(String[] args) {
-        SinglyLinkedList list = new SinglyLinkedList();
 
-        System.out.println("--- Uji Insert at Tail ---");
-        list.insertAtTail(10);
-        list.insertAtTail(20);
-        list.insertAtTail(30);
-        list.display(); // Output: 10 -> 20 -> 30 -> null
+        // Create a hard-coded linked list:
+        // 8 -> 2 -> 3 -> 1 -> 7
+        Node head = new Node(8);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(1);
+        head.next.next.next.next = new Node(7);
 
-        System.out.println("\n--- Uji Insert at Head ---");
-        list.insertAtHead(5);
-        list.display(); // Output: 5 -> 10 -> 20 -> 30 -> null
-
-        System.out.println("\n--- Uji Remove from Head ---");
-        list.removeHead();
-        list.display(); // Output: 10 -> 20 -> 30 -> null
+        head = deleteHead(head); 
+        printList(head);
     }
 }
