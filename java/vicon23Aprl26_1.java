@@ -1,10 +1,10 @@
 class node1 {
     int data;
-    node1 next;
+    node1 selanjutnya;
 
     node1(int a) {
         this.data = a;
-        this.next = null;
+        this.selanjutnya = null;
     }
 }
 
@@ -17,10 +17,10 @@ class linkList {
             head = n;
         } else {
             node1 temp = head;
-            while (temp.next != null) {
-                temp = temp.next;
+            while (temp.selanjutnya != null) {
+                temp = temp.selanjutnya;
             }
-            temp.next = n;
+            temp.selanjutnya = n;
         }
     }
 
@@ -28,18 +28,32 @@ class linkList {
         node1 temp = head;
         while (temp != null) {
             System.out.print(temp.data + " ");
-            temp = temp.next;
+            temp = temp.selanjutnya;
         }
     }
     
     void masukanDepan(int c) {
         node1 n = new node1(c);
-        n.next = head;
+        n.selanjutnya = head;
         head = n;
+    }
+
+    void hapus(int d) {
+        node1 tujuan = head, prev = null;
+        if ( tujuan != null && tujuan.data == d) {
+            head = tujuan.selanjutnya;
+            return;
+        }  
+        while (tujuan != null && tujuan.data != d) {
+            prev = tujuan;
+            tujuan = tujuan.selanjutnya;
+        }
+        if (tujuan == null) return;
+        prev.selanjutnya = tujuan.selanjutnya;
     }
 }
 
-public class vicon23Aprl26 {
+public class vicon23Aprl26_1 {
     public static void main(String[] args) {
         linkList list = new linkList();
         list.masukan(10);
@@ -48,6 +62,10 @@ public class vicon23Aprl26 {
         list.tampilkan();
         System.out.println();
         list.masukanDepan(5);
+        list.tampilkan();
+
+        System.out.println();
+        list.hapus(20);
         list.tampilkan();
     }
 }
