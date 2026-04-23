@@ -2,7 +2,6 @@ import java.util.Stack;
 
 public class InfixToPostfix {
 
-    // Menentukan prioritas operator
     static int precedence(char ch) {
         switch (ch) {
             case '+':
@@ -15,42 +14,37 @@ public class InfixToPostfix {
     }
 
     public static String convert(String exp) {
-        StringBuilder result = new StringBuilder();
+        String result = "";  // ← ganti StringBuilder dengan String biasa
         Stack<Character> stack = new Stack<>();
 
         for (int i = 0; i < exp.length(); ++i) {
             char c = exp.charAt(i);
 
-            // Jika karakter adalah operan (angka/huruf), langsung masukkan ke hasil
             if (Character.isLetterOrDigit(c)) {
-                result.append(c);
+                result += c;  // ← append() diganti +=
             } 
-            // Jika '(', masukkan ke stack
             else if (c == '(') {
-                stack.push(c);
+                stack.push(c);                                                      // Saol : "a+b*(c^d-e)"
             } 
-            // Jika ')', keluarkan semua dari stack sampai ketemu '('
             else if (c == ')') {
                 while (!stack.isEmpty() && stack.peek() != '(') {
-                    result.append(stack.pop());
+                    result += stack.pop();  // ← append() diganti +=
                 }
                 stack.pop();
             } 
-            // Jika operator (+, -, *, /)
             else {
                 while (!stack.isEmpty() && precedence(c) <= precedence(stack.peek())) {
-                    result.append(stack.pop());
+                    result += stack.pop();  // ← append() diganti +=
                 }
                 stack.push(c);
             }
         }
 
-        // Keluarkan sisa operator dari stack
         while (!stack.isEmpty()) {
-            result.append(stack.pop());
+            result += stack.pop();  // ← append() diganti +=
         }
 
-        return result.toString();
+        return result;  // ← tidak perlu .toString()
     }
 
     public static void main(String[] args) {
