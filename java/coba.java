@@ -2,28 +2,26 @@ import java.util.Stack;
 
 public class coba {
     public static void main(String[] args) {
-        Stack<Integer> a = new Stack<>();
-        System.out.println("melihat element saat ini = "+ a);
+        Stack<Integer> stack = new Stack<>();
 
         // menambahkan elemen ke stack
-        a.push(10);
-        a.push(20);
-        a.push(30);
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
 
-        System.out.println("stack setelah push = " + a);
+        System.out.println("Stack setelah push: " + stack);
 
-        //menghapus element paling akhir
-        int elemenAtas = a.pop();
+        // melihat elemen teratas
+        int topElement = stack.peek();
+        System.out.println("Elemen teratas: " + topElement);
 
-        System.out.println("elemen stelah di pop = " + elemenAtas);
-        
-        // melihat elemnt akhir
-        System.out.println("element paling akhir saat ini = "+ a.peek());
+        // menghapus elemen teratas
+        int poppedElement = stack.pop();
+        System.out.println("Elemen yang di-pop: " + poppedElement);
+        System.out.println("Stack setelah pop: " + stack);
 
-        // memeriksa apakah stack kosong
-        System.out.println("apakah stack kosong = "+ a.isEmpty());
-
-        System.out.println("stack setelah push = " + a);
+        // memeriksa apakah stack kosong        boolean isEmpty = stack.isEmpty();
+        System.out.println("Apakah stack kosong? " + stack.isEmpty());
         
     }
 }
