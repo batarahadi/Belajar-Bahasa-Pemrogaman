@@ -1,7 +1,7 @@
 package kuliah.tugas_mandiri.lec;
 import java.util.Scanner;
 
-// ── NODE PELANGGAN ───────────────────────────────────────
+// ── NODE PELANGGAN ───
 class NodePelanggan {
     String nomorAntrian, namaPelanggan;
     double totalBelanja;
@@ -15,7 +15,7 @@ class NodePelanggan {
     }
 }
 
-// ── QUEUE (Antrian Pelanggan) ────────────────────────────
+// ── QUEUE (Antrian Pelanggan) ───
 class QueuePelanggan {
     NodePelanggan depan, belakang;
     int jumlah = 0;
@@ -26,7 +26,7 @@ class QueuePelanggan {
         belakang = baru;
         if (depan == null) depan = baru;
         jumlah++;
-        System.out.println("✅ Data pelanggan ditambahkan ke antrian!");
+        System.out.println("Data pelanggan ditambahkan ke antrian!");
     }
 
     public NodePelanggan dequeue() {
@@ -40,11 +40,11 @@ class QueuePelanggan {
 
     public void tampilkan() {
         if (depan == null) {
-            System.out.println("❌ Antrian kosong.");
+            System.out.println("Antrian kosong.");
             return;
         }
 
-        System.out.println("\n📋 Antrian Pelanggan Saat Ini:");
+        System.out.println("\nAntrian Pelanggan Saat Ini:");
         System.out.println("╔══════════════╦══════════════════════╦═══════════════╗");
         System.out.printf( "║ %-12s ║ %-20s ║ %-13s ║%n", "No. Antrian", "Nama", "Total Belanja");
         System.out.println("╠══════════════╬══════════════════════╬═══════════════╣");
@@ -63,7 +63,7 @@ class QueuePelanggan {
     public boolean isEmpty() { return depan == null; }
 }
 
-// ── STACK (Riwayat Transaksi) ────────────────────────────
+// ── STACK (Riwayat Transaksi) ───
 class StackTransaksi {
     NodePelanggan atas;
     int jumlah = 0;
@@ -72,16 +72,16 @@ class StackTransaksi {
         pelanggan.next = atas;
         atas = pelanggan;
         jumlah++;
-        System.out.println("📦 Transaksi disimpan ke riwayat.");
+        System.out.println("Transaksi disimpan ke riwayat.");
     }
 
     public void tampilkan() {
         if (atas == null) {
-            System.out.println("❌ Belum ada riwayat transaksi.");
+            System.out.println("Belum ada riwayat transaksi.");
             return;
         }
 
-        System.out.println("\n🧾 Riwayat Transaksi (Terbaru → Lama):");
+        System.out.println("\nRiwayat Transaksi (Terbaru → Lama):");
         System.out.println("╔══════════════╦══════════════════════╦═══════════════╗");
         System.out.printf( "║ %-12s ║ %-20s ║ %-13s ║%n", "No. Antrian", "Nama", "Total Belanja");
         System.out.println("╠══════════════╬══════════════════════╬═══════════════╣");
@@ -98,7 +98,7 @@ class StackTransaksi {
     }
 }
 
-// ── MAIN ─────────────────────────────────────────────────
+// ── MAIN ─────
 public class tugas2 {
     public static void main(String[] args) {
         QueuePelanggan antrian = new QueuePelanggan();
@@ -132,11 +132,11 @@ public class tugas2 {
 
                 case 2:
                     if (antrian.isEmpty()) {
-                        System.out.println("❌ Tidak ada pelanggan dalam antrian.");
+                        System.out.println("Tidak ada pelanggan dalam antrian.");
                         break;
                     }
                     NodePelanggan dilayani = antrian.dequeue();
-                    System.out.println("\n🛒 Melayani pelanggan " + dilayani.nomorAntrian
+                    System.out.println("\nMelayani pelanggan " + dilayani.nomorAntrian
                         + " (" + dilayani.namaPelanggan + ")");
                     System.out.printf("   Total Belanja: Rp%,.0f%n", dilayani.totalBelanja);
                     riwayat.push(dilayani);
@@ -152,16 +152,16 @@ public class tugas2 {
 
                 case 5:
                     if (riwayat.jumlah < 5) {
-                        System.out.println("⚠️  Minimal 5 pelanggan harus dilayani dulu!");
+                        System.out.println("Minimal 5 pelanggan harus dilayani dulu!");
                         System.out.println("   Sudah dilayani: " + riwayat.jumlah + " pelanggan.");
                         pilihan = 0;
                         break;
                     }
-                    System.out.println("👋 Terima kasih! Sampai jumpa!");
+                    System.out.println("Terima kasih! Sampai jumpa!");
                     break;
 
                 default:
-                    System.out.println("❌ Menu tidak valid!");
+                    System.out.println("Menu tidak valid!");
             }
 
         } while (pilihan != 5);
